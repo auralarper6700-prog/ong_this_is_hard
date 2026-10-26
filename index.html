@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Password Breach – a cybersecurity password game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Password Breach</h1>
+  <p>Your account policy is strict. Build a password that passes every rule. New rules appear as you go.</p>
+</header>
+
+<main>
+  <section class="console" aria-label="Account setup">
+    <label for="pw">Choose a password</label>
+    <input id="pw" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
+    <p id="count" aria-live="polite"></p>
+    <ul id="rules"></ul>
+
+    <form id="mfa" hidden>
+      <h2>Two-factor authentication required</h2>
+      <p>A password alone is not enough. Enter the 6-digit code from your phone.</p>
+      <div class="row">
+        <input id="otp" inputmode="numeric" maxlength="6" autocomplete="off" aria-label="6-digit code">
+        <button type="submit">Verify code</button>
+      </div>
+      <p id="mfa-msg" role="alert"></p>
+    </form>
+  </section>
+
+  <aside class="phone" id="phone" hidden aria-label="Your phone">
+    <div class="screen">
+      <div class="app">
+        <span class="app-name">Authenticator</span>
+        <span class="acct">you@corp.example</span>
+        <span class="code" id="code">------</span>
+        <div class="bar"><i id="bar"></i></div>
+        <span class="hint">Code changes every 30 seconds</span>
+      </div>
+      <div class="sms" id="sms" hidden>
+        <span class="from">Unknown number</span>
+        <p>Hi, this is IT Helpdesk. We hit a glitch on your login. Reply with the 6-digit code on your screen so we can fix it.</p>
+        <div class="row">
+          <button type="button" id="reply" class="danger">Reply with code</button>
+          <button type="button" id="report">Report as phishing</button>
+        </div>
+        <p id="sms-msg" role="alert"></p>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<section id="win" class="win" hidden>
+  <h2>Access granted. Breach blocked.</h2>
+  <p>You built a strong password, used a second factor, and refused to hand your code to a stranger.</p>
+  <ul>
+    <li>Long, unique passwords beat clever short ones.</li>
+    <li>MFA stops attackers who already have your password.</li>
+    <li>MFA codes are secret. Real IT staff never ask for them.</li>
+    <li>Report phishing instead of replying to it.</li>
+  </ul>
+  <button type="button" onclick="location.reload()">Play again</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
