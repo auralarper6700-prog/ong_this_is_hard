@@ -18,9 +18,6 @@ The year rule uses the current year from your computer's clock. If the game asks
 
 Open `index.html` in a browser.
 
-## Host on GitHub Pages
+## Accessing the website
 
-1. Push these files to the repo root.
-2. Go to Settings → Pages.
-3. Under Build and deployment, choose Deploy from a branch, branch `main`, folder `/ (root)`.
-4. Save and wait a minute for the site URL to appear.
+1. Access the website using https://auralarper6700-prog.github.io/ong_this_is_hard/
